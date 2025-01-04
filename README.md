@@ -3,7 +3,7 @@
 QtMnL (pronounced “cute emm-'n'-ell”, after the framework Qt, officially pronounced “cute”) is a GUI editor for the Mario & Luigi games, although it currently only supports Bowser's Inside Story (the original DS version). It is built using [PySide6](https://doc.qt.io/qtforpython-6/), [NodeGraphQt (Qt 6 fork)](https://github.com/jack-mil/NodeGraphQt/tree/pyside6), [`ndspy`](https://ndspy.readthedocs.io), [`mnllib.py`](https://github.com/MnL-Modding/mnllib.py) and the [YAML command documentation](https://github.com/MnL-Modding/BIS-docs/tree/main/cutscene_code).
 
 ## Downloads
-Pre-built binaries for Windows and Linux made with [Nuitka](https://nuitka.net/) can be found on the [Releases](https://github.com/MnL-Modding/QtMnL/releases) page.
+Pre-built binaries for Windows (`.exe`) and Linux (`.bin`) made with [Nuitka](https://nuitka.net/) can be found on the [Releases](https://github.com/MnL-Modding/QtMnL/releases) page.
 
 ## Frequently asked questions
 ### 1. Why is loading a script so slow and why does it use up so much RAM?
