@@ -1,5 +1,4 @@
 import pathlib
-import typing
 from typing import override
 
 from PySide6.QtCore import (
