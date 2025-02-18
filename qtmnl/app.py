@@ -1,5 +1,7 @@
 import copy
+import gc
 import io
+import itertools
 import pathlib
 import sys
 import traceback
@@ -641,8 +643,19 @@ class MainWindow(QMainWindow):
                 self.language_table_widgets[language_id] = table_widget
                 self.language_tables_layout.addWidget(table_widget)
 
-        self.graph.delete_nodes(self.graph.all_nodes(), push_undo=False)
+        for node in self.graph.all_nodes():
+            for port in itertools.chain(node.input_ports(), node.output_ports()):
+                port.clear_connections(push_undo=False)
+                port.model.node = None
+            self.graph.model.nodes.pop(node.id)  # type: ignore[attr-defined]
+            node.view.delete()
+            for referrer in gc.get_referrers(node):  # FIXME: Ugly and slow hack!
+                try:
+                    del referrer.cell_contents
+                except AttributeError:
+                    pass
         self.graph.clear_session()
+        gc.collect()
         for subroutine_index, subroutine in enumerate(script.subroutines):
             x = subroutine_index * 1000
             subroutine_node = self.graph.create_node(
