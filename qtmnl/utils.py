@@ -1,5 +1,6 @@
 import pathlib
 import typing
+from typing import override
 
 from PySide6.QtCore import (
     QAbstractItemModel,
@@ -34,7 +35,7 @@ class ValidatedItemDelegate(QStyledItemDelegate):
 
         self.validator = validator
 
-    @typing.override
+    @override
     def createEditor(
         self,
         parent: QWidget,
@@ -48,7 +49,7 @@ class ValidatedItemDelegate(QStyledItemDelegate):
 
 
 class DialogItemDelegate(QStyledItemDelegate):
-    @typing.override
+    @override
     def createEditor(
         self,
         parent: QWidget,
@@ -67,7 +68,7 @@ class DialogItemDelegate(QStyledItemDelegate):
         dialog.setFixedSize(600, 300)
         return dialog
 
-    @typing.override
+    @override
     def setModelData(
         self,
         editor: QWidget,

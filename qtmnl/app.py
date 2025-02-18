@@ -4,6 +4,7 @@ import pathlib
 import sys
 import traceback
 import typing
+from typing import override
 
 from NodeGraphQt.constants import LayoutDirectionEnum
 from NodeGraphQt.custom_widgets.nodes_palette import (
@@ -694,7 +695,7 @@ class MainWindow(QMainWindow):
                 command_node.set_input(0, last_node.output(0))
                 y += command_node.view.height + 40
                 last_node = command_node
-                progress.setValue(subroutine_index + 1)
+            progress.setValue(subroutine_index + 1)
         self.graph.clear_selection()
         self.graph.clear_undo_stack()
 
@@ -981,7 +982,7 @@ class MainWindow(QMainWindow):
             case _:
                 return True
 
-    @typing.override
+    @override
     def closeEvent(self, event: QCloseEvent) -> None:
         if self.prompt_dirty():
             event.ignore()
