@@ -1,20 +1,27 @@
-[tool.poetry]
+[project]
 name = "qtmnl"
 version = "0.1.0"
 description = "GUI editor for the Mario & Luigi games."
-authors = ["Dimitar Dimitrov <dmtrdmtrov@gmail.com>"]
-license = "GPL-3.0-or-later"
+authors = [
+      {name = "Dimitar Dimitrov",email = "dmtrdmtrov@gmail.com"}
+]
+license = {text = "GPL-3.0-or-later"}
 readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "pyside6 (>=6.8.0.2,<7.0.0.0)",
+    "mnllib @ git+https://github.com/MnL-Modding/mnllib.py.git@v1",
+    "ndspy (>=4.2.0,<5.0.0)",
+    "nodegraphqt @ git+https://github.com/jack-mil/NodeGraphQt.git@pyside6",
+    "cached-path (>=1.6.5,<2.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "pyqtdarktheme-fork @ git+https://github.com/henriquegemignani/PyQtDarkTheme"
+]
 
-[tool.poetry.dependencies]
-python = ">=3.12,<3.14"
-pyside6 = "6.8.0.2"
-mnllib = { git = "https://github.com/MnL-Modding/mnllib.py.git", branch = "v1" }
-ndspy = "^4.2.0"
-nodegraphqt = { git = "https://github.com/jack-mil/NodeGraphQt.git", branch = "pyside6" }
-cached-path = "^1.6.5"
-pyyaml = "^6.0.2"
-pyqtdarktheme-fork = { git = "https://github.com/henriquegemignani/PyQtDarkTheme" }
+[project.scripts]
+qtmnl = "qtmnl:main"
+
+[tool.poetry]
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.13.0"
@@ -22,9 +29,6 @@ flake8 = "^7.1.1"
 types-pyyaml = "^6.0.12.20240917"
 nuitka = "^2.5.6"
 
-[tool.poetry.scripts]
-qtmnl = "qtmnl:main"
-
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
