@@ -1,5 +1,10 @@
 # QtMnL
 ![Screenshot of QtMnL](docs/screenshot.png)
+
+> [!IMPORTANT]
+> QtMnL is significantly outdated! For the time being it's recommended to use [`mnlscript.py`](https://github.com/MnL-Modding/mnlscript.py),
+> which aside from features has gained significant usability improvements since this tool was made.
+
 QtMnL (pronounced “cute emm-'n'-ell”, after the framework Qt, officially pronounced “cute”) is a GUI editor for the Mario & Luigi games, although it currently only supports Bowser's Inside Story (the original DS version). It is built using [PySide6](https://doc.qt.io/qtforpython-6/), [NodeGraphQt (Qt 6 fork)](https://github.com/jack-mil/NodeGraphQt/tree/pyside6), [`ndspy`](https://ndspy.readthedocs.io), [`mnllib.py`](https://github.com/MnL-Modding/mnllib.py) and the [YAML command documentation](https://github.com/MnL-Modding/BIS-docs/tree/main/cutscene_code).
 
 ## Downloads
@@ -21,12 +26,12 @@ Because jump commands currently have the number of bytes to jump as just a norma
 You need a `Wait for Textbox to Close (FE_01BD)` command afterwards in order to wait for it to close. Also make sure the `wait before continuing` parameter of your Show Textbox command is set to `0x00`.
 
 ### 5. Can you summarize the differences between QtMnL (pretty much the same points apply to Showtime!) and `mnlscript`?
-| Feature                                 | QtMnL |  `mnlscript`  |
-| --------------------------------------- | :---: | :-----------: |
-| Ease-of-use                             |   ✅   | *Skill issue* |
-| Edit ROM without extracting/decompiling |   ✅   |   *Git gud*   |
-| Comments                                |   ❌   |       ✅       |
-| Variables                               |   ❌   |       ✅       |
-| Dynamically-generated commands          |   ❌   |       ✅       |
-| Git-friendliness                        |   ❌   |       ✅       |
-| Easy collaboration on the same project  |   ❌   |       ✅       |
+| Feature                                 | QtMnL | `mnlscript` |
+| --------------------------------------- | :---: | :---------: |
+| Ease-of-use                             |   ✅   | debatable  |
+| Edit ROM without extracting/decompiling |   ✅   |     ❌      |
+| Comments                                |   ❌   |     ✅      |
+| Variables                               |   ❌   |     ✅      |
+| Dynamically-generated commands          |   ❌   |     ✅      |
+| Git-friendliness                        |   ❌   |     ✅      |
+| Easy collaboration on the same project  |   ❌   |     ✅      |
